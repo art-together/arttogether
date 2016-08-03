@@ -1,0 +1,97 @@
+<div class="container">
+    <div class="row">
+        <div class="col-10">
+
+            <div  class="my-drawing"></div>
+
+            <button id="save">Save</button>
+            <button id="add">add</button>
+            <button id="console">console</button>
+
+            <!--<img id="img"  src="./templates/test/1.png" style="display: block">-->
+        </div>
+    </div>
+</div>
+
+<!-- kick it off -->
+<script>
+    var first;
+    var sec;
+
+    var img = new Image("./templates/test/1.png");
+   // img.src = "./templates/test/download.svg";
+    //img.src = "./templates/test/1.png";
+
+    $("#img").html(img);
+
+    var lc = LC.init(
+            document.getElementsByClassName('my-drawing')[0],
+            {
+                imageURLPrefix: './lib/lc-04/img',
+                tools: [LC.tools.Pencil, LC.tools.Text],
+                strokeWidths: [5]
+            }
+
+    );
+
+
+    var newImage = new Image();
+    //newImage.src = "./templates/test/1.png";
+    newImage.src = "./templates/test/download.svg";
+    lc.saveShape(LC.createShape('Image', {x: 10, y: 10, image: newImage}));
+
+    lc.setImageSize('3200', '800');
+    lc.setZoom(0.3);
+    lc.setColor('background', 'white');
+    lc.setColor('primary', 'blue');
+
+    var f;
+    $(document).ready(function () {
+        var arr = [];
+        var xml;
+
+        $("#save").click(function (e) {
+            e.preventDefault();
+            var svgString = lc.getSVGString();
+            //window.open("data:image/svg+xml;base64," + btoa(svgString));
+            window.open("data:image/svg+xml;base64," + btoa(xml));
+
+
+
+        });
+
+        $("#add").click(function () {
+            xml = "<svg xmlns='http://www.w3.org/2000/svg' width='32000' height='8000' viewBox='0 0 32000 8000'> <rect width='32000' height='8000' x='0' y='0' fill='white' />" +
+                    arr[0] + arr[1] + "</svg>";
+            console.log(xml);
+            console.log(arr.length);
+        });
+
+        $("#console").click(function () {
+
+            var str = lc.getSVGString();
+
+            var img = lc.getImage();
+
+            var idx = str.indexOf('<g');
+            var end = str.indexOf('/g>');
+            // console.log(str.substring(idx, end+3));
+
+            arr.push(str.substring(idx, end+3));
+
+            lc = LC.init(
+                    document.getElementsByClassName('my-drawing')[0],
+                    {
+                        imageURLPrefix: './img',
+                        tools: [LC.tools.Pencil, LC.tools.Text],
+                        strokeWidths: [5]
+                    }
+            );
+            lc.setImageSize('3200', '800');
+            lc.setZoom(0.3);
+            lc.setColor('background', 'white');
+            lc.setColor('primary', 'red');
+
+        });
+    });
+</script>

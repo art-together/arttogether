@@ -1,0 +1,39 @@
+<header id="header-main" class="">
+    <nav>
+        <div class="container">
+            <div class="row">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                            data-target="#top_menu">
+                        <i class="ion-navicon-round icon-nav"></i>
+                    </button>
+                    <a class="navbar-brand logo" href="#/"><img class="img-logo" alt="Brand" src="creative/logo.png"></a>
+                </div>
+                <div class="collapse navbar-collapse navbar-left" id="top_menu">
+                    <ul class="menu">
+                        <li><a href="#/">About</a></li>
+                        <!--<li ng-if="!$root.authenticated"><a ng-href="#/signin">Join&Create</a></li>-->
+                        <li><a ng-href="#/draw">Join&Create</a></li>
+                        <li><a href="#/">FAQ</a></li>
+                        <li><a href="#/">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="navbar-right sign-in">
+                    <a ng-if="!$root.authenticated" href="" ng-click="openLogin()" class="btn login">Sign in</a>
+                    <a ng-if="$root.authenticated" ng-click="logout()" class="btn login">Log out</a>
+                    <a href="" class="lang">EN</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <div class="title_block">
+                    <h1>Let's create together</h1>
+                    <img src="img/play@High.png" height="120px" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</header>

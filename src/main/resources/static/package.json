@@ -1,0 +1,21 @@
+{
+  "name": "solobook",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Moroz",
+  "license": "BSD-2-Clause",
+  "dependencies": {
+    "grunt": "~0.4.5"
+  },
+  "devDependencies": {
+    "grunt-contrib-concat": "~0.5.1",
+    "grunt-contrib-clean": "~0.7.0",
+    "grunt-contrib-uglify": "~0.11.0",
+    "grunt-contrib-jshint": "~0.11.3",
+    "grunt-contrib-less": "~1.1.0"
+  }
+}

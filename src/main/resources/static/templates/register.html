@@ -1,0 +1,48 @@
+<div class="row" style="padding: 100px">
+    <div class="col-sm-10 col-sm-offset-1">
+        <form ng-submit="register()" class="form-horizontal">
+
+            <div class="form-group">
+                <label for="name" class="col-sm-2 control-label">First name:</label>
+
+                <div class="col-sm-8">
+                    <input id="name" type="text" ng-model="user.firstname" class="form-control"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="lastname" class="col-sm-2 control-label">Last name:</label>
+
+                <div class="col-sm-8">
+                    <input id="lastname" type="text" ng-model="user.lastname" class="form-control"/>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="email" class="col-sm-2 control-label">Email:</label>
+
+                <div class="col-sm-8">
+                    <input id="email" type="text" ng-model="user.email" placeholder="Will be your login" class="form-control"/>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label  class="col-sm-2 control-label">Password:</label>
+
+                <div class="col-sm-8">
+                    <input type="password" ng-model="user.password" class="form-control"/>
+                </div>
+            </div>
+
+            <!--<div class="form-group">
+                <label  class="col-sm-2 control-label">Confirm password:</label>
+
+                <div class="col-sm-8">
+                    <input  type="password" ng-model="user.confirm" class="form-control"/>
+                </div>
+            </div>-->
+
+            <input type="submit" class="btn btn-primary pull-right" value="Submit"/>
+
+        </form>
+    </div>
+</div>
